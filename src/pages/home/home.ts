@@ -28,5 +28,8 @@ export class HomePage {
     });
   }
 
+  test(): void {
+    console.log('1');
+  }
 
 }
