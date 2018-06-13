@@ -20,11 +20,11 @@ export class AboutPage {
     this.sliderArrs = [
       {
         'title': '标题一',
-        'image': '../../assets/imgs/slider/img-132d5b2c9bbabd8c17c7a0c570e890d6.jpg' 
+        'image': 'assets/imgs/slider/img-132d5b2c9bbabd8c17c7a0c570e890d6.jpg' 
       },
       {
         'title': '标题二',
-        'image': '../../assets/imgs/slider/img-2508a10ac05193391961b4fd94553015.jpg' 
+        'image': 'assets/imgs/slider/img-2508a10ac05193391961b4fd94553015.jpg' 
       }
     ];
   }
