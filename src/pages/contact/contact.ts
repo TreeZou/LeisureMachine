@@ -1,26 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-import { ToastMessageServiceProvider } from '../../providers/toast-message-service/toast-message-service';
-import { GithubTestServiceProvider } from '../../providers/github-test-service/github-test-service'
-
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
 
+  pet: string
   searchQuery: string = '';
   items: string[];
-
-  constructor(public navCtrl: NavController,
-              private toastMessage: ToastMessageServiceProvider,
-              private GithubTestService: GithubTestServiceProvider) {
+  
+  constructor(public navCtrl: NavController) {
     this.initializeItems();
   }
 
   ionViewDidLoad() {
-    
+    this.pet = 'kittens';
   }
 
   initializeItems() {
@@ -38,9 +33,5 @@ export class ContactPage {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }  
-  }
-
-  showToast(): void {
-    this.toastMessage.showTip("开始了", '1000', 'center');
   }
 }
