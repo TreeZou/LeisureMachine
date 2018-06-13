@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { ToastMessageServiceProvider } from '../../providers/toast-message-service/toast-message-service'
+import { ToastMessageServiceProvider } from '../../providers/toast-message-service/toast-message-service';
+import { GithubTestServiceProvider } from '../../providers/github-test-service/github-test-service'
 
 @Component({
   selector: 'page-contact',
@@ -13,8 +14,13 @@ export class ContactPage {
   items: string[];
 
   constructor(public navCtrl: NavController,
-              private toastMessage: ToastMessageServiceProvider) {
+              private toastMessage: ToastMessageServiceProvider,
+              private GithubTestService: GithubTestServiceProvider) {
     this.initializeItems();
+  }
+
+  ionViewDidLoad() {
+    
   }
 
   initializeItems() {
