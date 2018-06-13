@@ -1,0 +1,13 @@
+page-home {
+    .cardStyle {
+        img {
+            height: 20rem;
+        }
+    }
+
+    .escllipse {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

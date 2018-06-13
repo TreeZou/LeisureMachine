@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let item of listData" class="cardStyle">
+      <img src="{{item.thumbnailUrl}}"/>
+      <ion-card-content>
+        <ion-card-title class="escllipse">
+            {{item.title}}
+          </ion-card-title>
+        <p>
+            链接：<a href="{{item.url}}">{{item.url}}</a>
+        </p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

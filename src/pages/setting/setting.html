@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>
+          更多
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/person/head.png">
+      </ion-avatar>
+      <h2>Jockey</h2>
+      <p>18795905365</p>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item>
+      <ion-icon name="md-person" item-start></ion-icon>
+      个人资料
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="md-person-add" item-start></ion-icon>
+      添加好友
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="ios-people" item-start></ion-icon>
+      好友列表
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="ios-call" item-start></ion-icon>
+      手机绑定
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="ios-compass" item-start></ion-icon>
+      手机定位
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+  </ion-list>
+  <div style="text-align: center; margin-left: 30px; margin-right: 30px;margin-top: 30px;">
+      <button ion-button block (click)="loginOut()">
+          退出登录
+      </button>
+  </div>
+</ion-content>

@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar>
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item (click)="showToast()">
+        <ion-icon name="logo-twitter" item-start></ion-icon>
+        Followers
+        <ion-badge item-end>260k</ion-badge>
+    </ion-item>
+</ion-content>
