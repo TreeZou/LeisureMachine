@@ -27,6 +27,7 @@ import { LoadingService } from '../services/loading/loading.service'
 import { ToastServiceProvider } from '../providers/toast-service/toast-service';
 import { ToastMessageServiceProvider } from '../providers/toast-message-service/toast-message-service';
 import { GithubTestServiceProvider } from '../providers/github-test-service/github-test-service';
+import { SubTabsConfigureProvider } from '../providers/sub-tabs-configure/sub-tabs-configure';
 
 @NgModule({
   declarations: [
@@ -45,8 +46,6 @@ import { GithubTestServiceProvider } from '../providers/github-test-service/gith
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: 'true' ,       //隐藏全部子页面tabs
-      iconMode: 'ios',
-      mode: 'ios',
       modalEnter: 'modal-slide-in',
       modalLeave: 'modal-slide-out',
     })
@@ -73,7 +72,8 @@ import { GithubTestServiceProvider } from '../providers/github-test-service/gith
     ContactServiceProvider,
     ToastServiceProvider,
     ToastMessageServiceProvider,
-    GithubTestServiceProvider
+    GithubTestServiceProvider,
+    SubTabsConfigureProvider
   ]
 })
 export class AppModule {}
