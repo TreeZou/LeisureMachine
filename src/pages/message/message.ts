@@ -28,7 +28,7 @@ export class MessagePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MessagePage');
+    
   }
 
 }

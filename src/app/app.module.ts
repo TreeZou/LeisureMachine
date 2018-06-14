@@ -22,12 +22,17 @@ import { TestServiceProvider } from '../providers/test-service/test-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
 import { ContactServiceProvider } from '../providers/contact-service/contact-service';
 
-// loading工具
+// 服务
 import { LoadingService } from '../services/loading/loading.service'
 import { ToastServiceProvider } from '../providers/toast-service/toast-service';
 import { ToastMessageServiceProvider } from '../providers/toast-message-service/toast-message-service';
 import { GithubTestServiceProvider } from '../providers/github-test-service/github-test-service';
 import { SubTabsConfigureProvider } from '../providers/sub-tabs-configure/sub-tabs-configure';
+import { ChatMessage, UserInfo, ChatService } from '../providers/chat-service/chat-service';
+import { EmojiProvider } from '../providers/chat-service/emoji';
+
+//组件
+import { EmojiPickerComponent } from '../components/emoji-picker/emoji-picker'
 
 @NgModule({
   declarations: [
@@ -75,7 +80,11 @@ import { SubTabsConfigureProvider } from '../providers/sub-tabs-configure/sub-ta
     ToastServiceProvider,
     ToastMessageServiceProvider,
     GithubTestServiceProvider,
-    SubTabsConfigureProvider
+    SubTabsConfigureProvider,
+    ChatMessage,
+    UserInfo,
+    ChatService,
+    EmojiProvider
   ]
 })
 export class AppModule {}

@@ -1,6 +1,3 @@
-卷 新加卷 的文件夹 PATH 列表
-卷序列号为 06DD-7A3F
-E:.
 ├─.sourcemaps
 ├─node_modules
 │  ├─.bin
@@ -2505,10 +2502,11 @@ E:.
 │      │  │  │  │          ├─assets
 │      │  │  │  │          │  ├─fonts
 │      │  │  │  │          │  ├─icon
-│      │  │  │  │          │  └─imgs
-│      │  │  │  │          │      ├─about
-│      │  │  │  │          │      ├─person
-│      │  │  │  │          │      └─slider
+│      │  │  │  │          │  ├─imgs
+│      │  │  │  │          │  │  ├─about
+│      │  │  │  │          │  │  ├─person
+│      │  │  │  │          │  │  └─slider
+│      │  │  │  │          │  └─mock
 │      │  │  │  │          ├─build
 │      │  │  │  │          ├─cordova-js-src
 │      │  │  │  │          │  ├─android
@@ -2653,10 +2651,11 @@ E:.
 │      │          │      ├─assets
 │      │          │      │  ├─fonts
 │      │          │      │  ├─icon
-│      │          │      │  └─imgs
-│      │          │      │      ├─about
-│      │          │      │      ├─person
-│      │          │      │      └─slider
+│      │          │      │  ├─imgs
+│      │          │      │  │  ├─about
+│      │          │      │  │  ├─person
+│      │          │      │  │  └─slider
+│      │          │      │  └─mock
 │      │          │      ├─build
 │      │          │      ├─cordova-js-src
 │      │          │      │  ├─android
@@ -3032,19 +3031,25 @@ E:.
 │  ├─app
 │  ├─assets
 │  │  ├─icon
-│  │  └─imgs
-│  │      ├─about
-│  │      ├─person
-│  │      └─slider
+│  │  ├─imgs
+│  │  │  ├─about
+│  │  │  ├─person
+│  │  │  └─slider
+│  │  └─mock
+│  ├─components
+│  │  └─emoji-picker
 │  ├─pages
 │  │  ├─about
+│  │  ├─chat
 │  │  ├─contact
 │  │  ├─home
 │  │  ├─login
 │  │  ├─message
 │  │  ├─setting
 │  │  └─tabs
+│  ├─pipes
 │  ├─providers
+│  │  ├─chat-service
 │  │  ├─contact-service
 │  │  ├─github-test-service
 │  │  ├─home-service
@@ -3059,8 +3064,9 @@ E:.
     ├─assets
     │  ├─fonts
     │  ├─icon
-    │  └─imgs
-    │      ├─about
-    │      ├─person
-    │      └─slider
+    │  ├─imgs
+    │  │  ├─about
+    │  │  ├─person
+    │  │  └─slider
+    │  └─mock
     └─build

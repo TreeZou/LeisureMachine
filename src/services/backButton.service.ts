@@ -30,7 +30,9 @@ export class BackButtonService {
       let activeNav: NavController = this.appCtrl.getActiveNavs()[0];
       //如果可以返回上一页，则执行pop
       if (activeNav.canGoBack()) {
-        activeNav.pop();
+        setTimeout(() => {
+          activeNav.pop();
+        }, 500);
       } else {
         if (tabRef == null || tabRef._selectHistory[tabRef._selectHistory.length - 1] === tabRef.getByIndex(0).id) {
           //执行退出
