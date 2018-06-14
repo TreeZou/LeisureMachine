@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SettingPage } from '../pages/setting/setting';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MessagePage } from '../pages/message/message'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,13 +36,20 @@ import { GithubTestServiceProvider } from '../providers/github-test-service/gith
     HomePage,
     LoginPage,
     SettingPage,
+    MessagePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: 'true' ,       //隐藏全部子页面tabs
+      iconMode: 'ios',
+      mode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,6 +59,7 @@ import { GithubTestServiceProvider } from '../providers/github-test-service/gith
     HomePage,
     LoginPage,
     SettingPage,
+    MessagePage,
     TabsPage
   ],
   providers: [

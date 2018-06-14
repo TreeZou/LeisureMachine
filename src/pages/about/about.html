@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides pager>
+  <ion-slides pager loop=true autoplay="2000" *ngIf="sliderNum > 1">
     <ion-slide *ngFor="let headSlider of sliderArrs">
       <img src="{{headSlider.image}}">
     </ion-slide>

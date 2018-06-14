@@ -21,11 +21,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.loadingService.showLoading("");
-    this.homeService.showMessages().subscribe(res => {
-      this.listData = res.json();
-      this.loadingService.hideLoading();
-    });
+    
   }
 
 

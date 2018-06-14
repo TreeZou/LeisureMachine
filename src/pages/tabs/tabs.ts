@@ -2,10 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, Tabs } from 'ionic-angular';
 
-import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { SettingPage } from '../setting/setting';
 import { HomePage } from '../home/home';
+import { MessagePage } from '../message/message'
 
 // services
 import { BackButtonService } from '../../services/backButton.service'
@@ -33,9 +33,9 @@ export class TabsPage {
         tabIcon: 'notifications'
       },
       {
-        root: AboutPage,
-        tabTitle: '关于',
-        tabIcon: 'document'
+        root: MessagePage,
+        tabTitle: '消息',
+        tabIcon: 'chatboxes'
       },
       {
         root: SettingPage,
