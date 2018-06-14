@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Platform, ToastController, App, NavController, Tabs } from 'ionic-angular';
 
+
+
+/**
+ * @author Jackey
+ * @description 返回
+ */
 @Injectable()
 export class BackButtonService {
 
@@ -10,7 +16,10 @@ export class BackButtonService {
   //构造函数 依赖注入
   constructor(public platform: Platform,
               public appCtrl: App,
-              public toastCtrl: ToastController) { }
+              public toastCtrl: ToastController) { 
+
+              }
+
 
   //注册方法
   registerBackButtonAction(tabRef: Tabs): void {

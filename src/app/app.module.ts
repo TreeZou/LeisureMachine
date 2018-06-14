@@ -45,9 +45,11 @@ import { SubTabsConfigureProvider } from '../providers/sub-tabs-configure/sub-ta
     HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
-      tabsHideOnSubPages: 'true' ,       //隐藏全部子页面tabs
+      tabsHideOnSubPages: 'true' ,      //隐藏全部子页面tabs
       modalEnter: 'modal-slide-in',
       modalLeave: 'modal-slide-out',
+      backButtonText: '返回', // 配置返回按钮的文字    
+      backButtonIcon: 'ios-arrow-back' // 配置返回按钮的图标 
     })
   ],
   bootstrap: [IonicApp],

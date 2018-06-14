@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
 
 import { ToastMessageServiceProvider } from '../../providers/toast-message-service/toast-message-service';
-import { GithubTestServiceProvider } from '../../providers/github-test-service/github-test-service'
+import { GithubTestServiceProvider } from '../../providers/github-test-service/github-test-service';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -16,7 +16,12 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController,
               private toastMessage: ToastMessageServiceProvider,
-              private GithubTestService: GithubTestServiceProvider) {
+              private githubTestService: GithubTestServiceProvider
+              ) {
+  }
+
+  goBackPage(): void {
+    this.navCtrl.pop();
   }
 
   ionViewWillEnter() {
