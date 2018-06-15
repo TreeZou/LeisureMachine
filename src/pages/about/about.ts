@@ -27,6 +27,7 @@ export class AboutPage {
   ionViewWillEnter() {
     this.slides.startAutoplay();
   }
+  
 
   ionViewWillLeave() {
     this.slides.stopAutoplay();
