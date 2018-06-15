@@ -33,6 +33,7 @@ import { EmojiProvider } from '../providers/chat-service/emoji';
 
 //组件
 import { EmojiPickerComponent } from '../components/emoji-picker/emoji-picker'
+import { UniteStyleProvider } from '../providers/unite-style/unite-style';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { EmojiPickerComponent } from '../components/emoji-picker/emoji-picker'
     ChatMessage,
     UserInfo,
     ChatService,
-    EmojiProvider
+    EmojiProvider,
+    UniteStyleProvider
   ]
 })
 export class AppModule {}

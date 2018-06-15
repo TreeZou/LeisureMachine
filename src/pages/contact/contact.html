@@ -1,10 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons start>
-      <button ion-button icon-only>
-        <ion-icon name="person"></ion-icon>
-      </button>
-    </ion-buttons>
     <ion-segment [(ngModel)]="pet">
       <ion-segment-button value="kittens">
         联系人
@@ -13,7 +8,7 @@
         陌生人
       </ion-segment-button>
     </ion-segment>
-    <ion-buttons end>
+    <ion-buttons (click)="presentActionSheet()" end>
       <button ion-button icon-only>
         <ion-icon name="more"></ion-icon>
       </button>
