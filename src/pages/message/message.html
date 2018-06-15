@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>消息</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item navPush="ChatPage"
+              [navParams]="toUser">
+      <ion-avatar item-left>
+        <img src="./assets/to-user.jpg">
+      </ion-avatar>
+      <h2>Hancock</h2>
+      <p>If at first you don’t succeed, call it version 1.0</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

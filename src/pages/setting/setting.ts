@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { LoginPage } from '../login/login'
+import { AboutPage } from '../about/about'
 
 /**
  * Generated class for the SettingPage page.
@@ -16,15 +17,30 @@ import { LoginPage } from '../login/login'
 })
 export class SettingPage {
 
-  constructor(public modalCtrl: ModalController ) {
+  constructor(public modalCtrl: ModalController, private navCtrl: NavController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
   }
 
+  
+  
+  /**
+   * 退出
+   */
   loginOut() {
     let modal = this.modalCtrl.create(LoginPage);
     modal.present();
   }
+
+
+  
+  /**
+   * 跳到关于页面
+   */
+  toAbout() {
+    this.navCtrl.push(AboutPage);
+  }
+
 }

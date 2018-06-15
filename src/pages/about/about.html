@@ -1,42 +1,13 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+<ion-header class="headBarColor">
+  <ion-navbar color="primary">
+    <ion-title>关于“休闲机子”</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <div padding>
-        <ion-segment [(ngModel)]="pet">
-          <ion-segment-button value="kittens">
-            联系人
-          </ion-segment-button>
-          <ion-segment-button value="puppies">
-            陌生人
-          </ion-segment-button>
-        </ion-segment>
-      </div>
-      
-      <div [ngSwitch]="pet" class="contactList">
-        <ion-list *ngSwitchCase="'puppies'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/imgs/about/play.png">
-            </ion-thumbnail>
-            <h2>Ruby</h2>
-          </ion-item>
-          ...
-        </ion-list>
-      
-        <ion-list *ngSwitchCase="'kittens'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/imgs/about/player.png">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
-        </ion-list>
-      </div>
+<ion-content>
+  <ion-slides pager loop=true autoplay="2000" *ngIf="sliderNum > 1">
+    <ion-slide *ngFor="let headSlider of sliderArrs">
+      <img src="{{headSlider.image}}">
+    </ion-slide>
+  </ion-slides>
 </ion-content>

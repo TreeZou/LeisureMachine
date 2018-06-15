@@ -1,5 +1,16 @@
 page-contact {
-    .searchbar-ios .searchbar-search-icon {
-        top: 11px!important;
+    .contactList {
+        ion-thumbnail {
+            min-height: 3rem; 
+            min-width: 50px;
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        ion-thumbnail[item-start] {
+            margin: 8px 0px 8px 0;
+        }
     }
 }

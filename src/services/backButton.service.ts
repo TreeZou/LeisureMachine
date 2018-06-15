@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Platform, ToastController, App, NavController, Tabs } from 'ionic-angular';
 
+
+
+/**
+ * @author Jackey
+ * @description 返回
+ */
 @Injectable()
 export class BackButtonService {
 
@@ -10,7 +16,10 @@ export class BackButtonService {
   //构造函数 依赖注入
   constructor(public platform: Platform,
               public appCtrl: App,
-              public toastCtrl: ToastController) { }
+              public toastCtrl: ToastController) { 
+
+              }
+
 
   //注册方法
   registerBackButtonAction(tabRef: Tabs): void {
@@ -21,7 +30,9 @@ export class BackButtonService {
       let activeNav: NavController = this.appCtrl.getActiveNavs()[0];
       //如果可以返回上一页，则执行pop
       if (activeNav.canGoBack()) {
-        activeNav.pop();
+        setTimeout(() => {
+          activeNav.pop();
+        }, 500);
       } else {
         if (tabRef == null || tabRef._selectHistory[tabRef._selectHistory.length - 1] === tabRef.getByIndex(0).id) {
           //执行退出

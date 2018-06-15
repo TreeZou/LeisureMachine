@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { HomeServiceProvider } from '../../providers/home-service/home-service'
-import { LoadingService } from '../../services/loading/loading.service'
-import { ToastServiceProvider } from '../../providers/toast-service/toast-service'
+import { HomeServiceProvider } from '../../providers/home-service/home-service';
+import { LoadingService } from '../../services/loading/loading.service';
+import { ToastServiceProvider } from '../../providers/toast-service/toast-service';
+import { ToastMessageServiceProvider } from '../../providers/toast-message-service/toast-message-service'
 
 @Component({
   selector: 'page-home',
@@ -16,20 +17,21 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
               private homeService: HomeServiceProvider, 
               private loadingService: LoadingService,
-              private toastService: ToastServiceProvider) {
+              private toastService: ToastServiceProvider,
+              private toastMessageService: ToastMessageServiceProvider) {
 
   }
 
   ionViewDidLoad() {
-    this.loadingService.showLoading("");
-    this.homeService.showMessages().subscribe(res => {
-      this.listData = res.json();
-      this.loadingService.hideLoading();
-    });
+    
   }
 
   test(): void {
     console.log('1');
+  }
+
+  toSearch(): any {
+    this.toastMessageService.showTip("进入搜索页面", '2000', 'bottom');
   }
 
 }

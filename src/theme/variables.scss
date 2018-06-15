@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  dodgerBlue: #1E90FF
 );
 
 
@@ -86,3 +87,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+

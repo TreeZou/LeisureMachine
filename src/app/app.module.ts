@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SettingPage } from '../pages/setting/setting';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MessagePage } from '../pages/message/message'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,10 +22,17 @@ import { TestServiceProvider } from '../providers/test-service/test-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
 import { ContactServiceProvider } from '../providers/contact-service/contact-service';
 
-// loading工具
+// 服务
 import { LoadingService } from '../services/loading/loading.service'
 import { ToastServiceProvider } from '../providers/toast-service/toast-service';
 import { ToastMessageServiceProvider } from '../providers/toast-message-service/toast-message-service';
+import { GithubTestServiceProvider } from '../providers/github-test-service/github-test-service';
+import { SubTabsConfigureProvider } from '../providers/sub-tabs-configure/sub-tabs-configure';
+import { ChatMessage, UserInfo, ChatService } from '../providers/chat-service/chat-service';
+import { EmojiProvider } from '../providers/chat-service/emoji';
+
+//组件
+import { EmojiPickerComponent } from '../components/emoji-picker/emoji-picker'
 
 @NgModule({
   declarations: [
@@ -34,13 +42,20 @@ import { ToastMessageServiceProvider } from '../providers/toast-message-service/
     HomePage,
     LoginPage,
     SettingPage,
+    MessagePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: 'true' ,      //隐藏全部子页面tabs
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      backButtonText: '返回', // 配置返回按钮的文字    
+      backButtonIcon: 'ios-arrow-back' // 配置返回按钮的图标 
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,6 +65,7 @@ import { ToastMessageServiceProvider } from '../providers/toast-message-service/
     HomePage,
     LoginPage,
     SettingPage,
+    MessagePage,
     TabsPage
   ],
   providers: [
@@ -62,7 +78,13 @@ import { ToastMessageServiceProvider } from '../providers/toast-message-service/
     HomeServiceProvider,
     ContactServiceProvider,
     ToastServiceProvider,
-    ToastMessageServiceProvider
+    ToastMessageServiceProvider,
+    GithubTestServiceProvider,
+    SubTabsConfigureProvider,
+    ChatMessage,
+    UserInfo,
+    ChatService,
+    EmojiProvider
   ]
 })
 export class AppModule {}
