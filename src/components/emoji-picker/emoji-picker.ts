@@ -38,6 +38,7 @@ export class EmojiPickerComponent implements ControlValueAccessor {
   }
 
   ionViewDidLoad() {
+    alert(1);
     this.emojiArr = this.emojiProvider.getEmojis();
     console.log(this.emojiArr);
   }

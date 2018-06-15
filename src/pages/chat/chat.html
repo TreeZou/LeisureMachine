@@ -39,5 +39,18 @@
       </button>
     </div>
     <!-- <emoji-picker [(ngModel)]="editorMsg"></emoji-picker> -->
-      
+    <!-- <picker></picker> -->
+    <div class="emoji-picker">
+      <div class="emoji-items">
+        <ion-slides pager>
+          <ion-slide *ngFor="let items of emoji">
+            <span class="emoji-item"
+                  (click)="setValue(item)"
+                  *ngFor="let item of items">
+              {{item}}
+            </span>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </div>
   </ion-footer>

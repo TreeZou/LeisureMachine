@@ -1,13 +1,53 @@
 page-home {
-    .cardStyle {
-        img {
-            height: 20rem;
+  .cardStyle {
+    img {
+      height: 20rem;
+    }
+  }
+  .escllipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .articleCard {
+    display: flex;
+    padding: 2px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    .articleLeft {
+      padding: 0 4px;
+      width: 70%;
+      .articleTitle {
+        padding-bottom: 2px;
+        font-size: 15px;
+        font-weight: bolder;
+        color: #2B2B2B;
+      }
+      .articleContent {
+        padding-bottom: 2px;
+        font-size: 13px;
+        color: #989898;
+      }
+      .articleBottom {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 0;
+        font-size: 12px;
+        color: #2B2B2B;
+        .author {
+            flex-shrink: 0;
         }
+        .createTime {
+            flex-shrink: 0;
+        }
+      }
     }
-
-    .escllipse {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+    .articleRight {
+      width: 30%;
     }
+  }
 }

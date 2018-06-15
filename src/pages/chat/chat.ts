@@ -1,15 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, forwardRef } from '@angular/core';
 import { IonicPage, NavParams } from 'ionic-angular';
 import { Events, Content } from 'ionic-angular';
 import { ChatService, ChatMessage, UserInfo } from "../../providers//chat-service/chat-service";
-
-/**
- * Generated class for the ChatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { ComponentsModule } from '../../components/components.module';
+import { EmojiProvider } from '../../providers/chat-service/emoji';
 @IonicPage()
 @Component({
   selector: 'page-chat',
@@ -23,11 +17,17 @@ export class ChatPage {
   user: UserInfo;
   toUser: UserInfo;
   showEmojiPicker = false;
+
   editorMsg = '';
+  emoji: any[];
+
+  _content: string;
 
   constructor(navParams: NavParams,
               private chatService: ChatService,
-              private events: Events,) {
+              private events: Events,
+              private emojiProvider: EmojiProvider,
+              private componentsModule: ComponentsModule) {
     // Get the navParams toUserId parameter
     this.toUser = {
       id: navParams.get('toUserId'),
@@ -38,7 +38,6 @@ export class ChatPage {
       console.log(res);
       this.user = res;
     });
-
   }
 
   ionViewDidEnter() {
@@ -97,6 +96,7 @@ export class ChatPage {
 
   switchEmojiPicker() {
     this.showEmojiPicker = !this.showEmojiPicker;
+    this.emoji = this.emojiProvider.getEmojis();
     if (!this.showEmojiPicker) {
       this.focus();
     } else {
@@ -128,7 +128,7 @@ export class ChatPage {
 
   
   /**
-   * Sends msg
+   * 发送消息
    * @returns 
    * @description 
    */
@@ -162,6 +162,15 @@ export class ChatPage {
         this.msgList[index].status = 'success';
       }
     })
+  }
+   
+   /**
+    * 表情
+    * @param val 
+    * @returns value 
+    */
+   setValue(val: any): any {
+    this.editorMsg += val;
   }
 
 }

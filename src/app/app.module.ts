@@ -11,7 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SettingPage } from '../pages/setting/setting';
 import { TabsPage } from '../pages/tabs/tabs';
-import { MessagePage } from '../pages/message/message'
+import { MessagePage } from '../pages/message/message';
+import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,8 +33,9 @@ import { ChatMessage, UserInfo, ChatService } from '../providers/chat-service/ch
 import { EmojiProvider } from '../providers/chat-service/emoji';
 
 //组件
-import { EmojiPickerComponent } from '../components/emoji-picker/emoji-picker'
 import { UniteStyleProvider } from '../providers/unite-style/unite-style';
+import { PipesModule } from '../pipes/pipes.module';
+import { ComponentsModule } from '../components/components.module'
 
 @NgModule({
   declarations: [
@@ -44,10 +46,13 @@ import { UniteStyleProvider } from '../providers/unite-style/unite-style';
     LoginPage,
     SettingPage,
     MessagePage,
-    TabsPage
+    TabsPage,
+    SearchPage
   ],
   imports: [
+    PipesModule,
     BrowserModule,
+    ComponentsModule,
     HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
@@ -67,6 +72,7 @@ import { UniteStyleProvider } from '../providers/unite-style/unite-style';
     LoginPage,
     SettingPage,
     MessagePage,
+    SearchPage,
     TabsPage
   ],
   providers: [

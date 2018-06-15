@@ -32,7 +32,7 @@ export class BackButtonService {
       if (activeNav.canGoBack()) {
         setTimeout(() => {
           activeNav.pop();
-        }, 500);
+        }, 300);
       } else {
         if (tabRef == null || tabRef._selectHistory[tabRef._selectHistory.length - 1] === tabRef.getByIndex(0).id) {
           //执行退出
