@@ -1,40 +1,44 @@
-<ion-header class="headBarColor">
-    <ion-navbar>
-        <ion-searchbar (ionInput)="getItems($event)" placeholder="想说些什么..."></ion-searchbar>
-    </ion-navbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        联系人
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        陌生人
+      </ion-segment-button>
+    </ion-segment>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <div padding>
-        <ion-segment [(ngModel)]="pet">
-          <ion-segment-button value="kittens">
-            联系人
-          </ion-segment-button>
-          <ion-segment-button value="puppies">
-            陌生人
-          </ion-segment-button>
-        </ion-segment>
-      </div>
-      
-      <div [ngSwitch]="pet" class="contactList">
-        <ion-list *ngSwitchCase="'puppies'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/imgs/about/play.png">
-            </ion-thumbnail>
-            <h2>Ruby</h2>
-          </ion-item>
-          ...
-        </ion-list>
-      
-        <ion-list *ngSwitchCase="'kittens'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/imgs/about/player.png">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
-        </ion-list>
-      </div>
+  <div [ngSwitch]="pet" class="contactList">
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/about/play.png">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/about/player.png">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
