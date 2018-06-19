@@ -30,7 +30,7 @@ export class HomePage {
   excRe = {
     'title': 'javascript是不是全世界最差的语言',
     'content': '很多人说javascript是全球最垃圾的语言，这样的解释是错误的。',
-    'img': 'assets/imgs/person/head.png',
+    'img': '',
     'name': 'Jackey',
     'date': '2018-06-01'
   };

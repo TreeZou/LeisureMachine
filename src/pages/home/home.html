@@ -14,7 +14,7 @@
   <!-- 写一个card样式 -->
   <div class="articleCard" *ngFor="let item of items">
     <!-- 左边 -->
-    <div class="articleLeft">
+    <div class="articleLeft" [class.wd70]="item.img">
       <div class="articleTitle escllipse">{{item.title}}</div>
       <div class="articleContent">
           {{item.content}}
@@ -25,7 +25,7 @@
       </div>
     </div>
     <!-- 右边 -->
-    <div class="articleRight">
+    <div class="articleRight" [class.wd30]="item.img">
       <img src="{{item.img}}">
     </div>
   </div>

@@ -16,9 +16,14 @@ page-home {
     flex-wrap: nowrap;
     width: 100%;
     overflow: hidden;
+    .wd70 {
+      width: 70%;
+    }
+    .wd30 {
+      width: 30%;
+    }
     .articleLeft {
       padding: 0 4px;
-      width: 70%;
       .articleTitle {
         padding-bottom: 2px;
         font-size: 15px;
@@ -47,7 +52,7 @@ page-home {
       }
     }
     .articleRight {
-      width: 30%;
+      
     }
   }
   .scroll-content {
