@@ -18,13 +18,29 @@ export class HomePage {
   listData: Object;
   myDate: any;
   nowTime: any;
+  items = [];
+  exc = {
+    'title': 'javascript是不是全世界最差的语言',
+    'content': '很多人说javascript是全球最垃圾的语言，这样的解释是错误的。',
+    'img': 'assets/imgs/person/head.png',
+    'name': 'Jackey',
+    'date': '2018-06-10'
+  };
+
+  excRe = {
+    'title': 'javascript是不是全世界最差的语言',
+    'content': '很多人说javascript是全球最垃圾的语言，这样的解释是错误的。',
+    'img': 'assets/imgs/person/head.png',
+    'name': 'Jackey',
+    'date': '2018-06-01'
+  };
 
   constructor(public navCtrl: NavController, 
               private homeService: HomeServiceProvider, 
               private loadingService: LoadingService,
               private toastService: ToastServiceProvider,
               private toastMessageService: ToastMessageServiceProvider) {
-              this.time = '2018-06-10';
+              this.items.push(this.exc);
   }
 
   ionViewDidLoad() {
@@ -41,6 +57,19 @@ export class HomePage {
   }
 
   doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
+    setTimeout(() => {
+      this.items.push(this.exc);
+      infiniteScroll.complete();
+    }, 500);
+
+  }
+
+  //下拉刷型界面
+  doRefresh(refresher){
+    //动态切换
+    setTimeout(() => {
+      this.items.unshift(this.excRe);
+      refresher.complete();
+    }, 500);
   }
 }

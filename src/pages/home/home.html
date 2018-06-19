@@ -5,66 +5,37 @@
 </ion-header>
 
 <ion-content padding>  
+    <ion-refresher (ionRefresh)="doRefresh($event)"> 
+        <ion-refresher-content
+            refreshingSpinner="bubbles"> 
+        </ion-refresher-content>
+    </ion-refresher>
+    
   <!-- 写一个card样式 -->
-  <div class="articleCard">
+  <div class="articleCard" *ngFor="let item of items">
     <!-- 左边 -->
     <div class="articleLeft">
-      <div class="articleTitle escllipse">javascript是不是全世界最差的语言</div>
+      <div class="articleTitle escllipse">{{item.title}}</div>
       <div class="articleContent">
-          很多人说javascript是全球最垃圾的语言，这样的解释是错误的。
+          {{item.content}}
       </div>
       <div class="articleBottom">
-        <div class="author">Jackey</div>
-        <div class="createTime">{{ time | relativeTime:'zh' }}</div>
+        <div class="author">{{item.name}}</div>
+        <div class="createTime">{{ item.date | relativeTime:'zh' }}</div>
       </div>
     </div>
     <!-- 右边 -->
     <div class="articleRight">
-      <img src="assets/imgs/person/head.png">
+      <img src="{{item.img}}">
     </div>
   </div>
 
-  <div class="articleCard">
-    <!-- 左边 -->
-    <div class="articleLeft">
-      <div class="articleTitle escllipse">javascript是不是全世界最差的语言</div>
-      <div class="articleContent">
-          很多人说javascript是全球最垃圾的语言，这样的解释是错误的。
-      </div>
-      <div class="articleBottom">
-        <div class="author">Jackey</div>
-        <div class="createTime">{{ time | relativeTime:'zh' }}</div>
-      </div>
-    </div>
-    <!-- 右边 -->
-    <div class="articleRight">
-      <img src="assets/imgs/person/head.png">
-    </div>
-  </div>
-
-  <div class="articleCard">
-    <!-- 左边 -->
-    <div class="articleLeft">
-      <div class="articleTitle escllipse">javascript是不是全世界最差的语言</div>
-      <div class="articleContent">
-          很多人说javascript是全球最垃圾的语言，这样的解释是错误的。
-      </div>
-      <div class="articleBottom">
-        <div class="author">Jackey</div>
-        <div class="createTime">{{ time | relativeTime:'zh' }}</div>
-      </div>
-    </div>
-    <!-- 右边 -->
-    <div class="articleRight">
-      <img src="assets/imgs/person/head.png">
-    </div>
-  </div>
-
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
       loadingText="数据加载中...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+  
 
 </ion-content>
