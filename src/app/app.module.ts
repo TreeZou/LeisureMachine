@@ -35,7 +35,9 @@ import { EmojiProvider } from '../providers/chat-service/emoji';
 //组件
 import { UniteStyleProvider } from '../providers/unite-style/unite-style';
 import { PipesModule } from '../pipes/pipes.module';
-import { ComponentsModule } from '../components/components.module'
+import { ComponentsModule } from '../components/components.module';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { ComponentsModule } from '../components/components.module'
     ComponentsModule,
     HttpModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: 'true' ,      //隐藏全部子页面tabs
       modalEnter: 'modal-slide-in',

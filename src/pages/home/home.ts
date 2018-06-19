@@ -40,4 +40,7 @@ export class HomePage {
     this.navCtrl.push(SearchPage);
   }
 
+  doInfinite(infiniteScroll) {
+    console.log('Begin async operation');
+  }
 }
