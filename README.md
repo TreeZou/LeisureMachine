@@ -9,7 +9,7 @@ git clone git@github.com:TreeZou/LeisureMachine.git
 npm install
 
 ## 第三步
-npm start
+ng server
 
 
 
