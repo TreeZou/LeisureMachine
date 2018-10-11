@@ -9,7 +9,8 @@ git clone git@github.com:TreeZou/LeisureMachine.git
 npm install
 
 ## 第三步
-ng server
+ionic serve
+
 
 
 
