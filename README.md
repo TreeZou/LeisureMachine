@@ -12,9 +12,6 @@ GOD BRESS ME, BRESS THESE PEAPLE THAT KIND, THANKS.
 git clone git@github.com:TreeZou/LeisureMachine.git
 
 2、 第二步
-npm install
-
-3、 第三步
 ionic serve
 
 > 项目组成员 
